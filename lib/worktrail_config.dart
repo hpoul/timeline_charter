@@ -17,7 +17,7 @@ var workTrailConfig = [
             ),
             new AnalyzerConfig(
                 //sql: 'SELECT apikey_id, k.label, COUNT(*) from saas_actionlog al left join saas_apikey k on k.id = al.apikey_id WHERE time BETWEEN @startTime AND @endTime group by al.apikey_id, k.label;',
-                sql: 'select k.id, k.label, count(al.id) from saas_apikey k left join saas_actionlog al on k.id = al.apikey_id AND time BETWEEN @startTime AND @endTime group by k.id, k.label;',
+                sql: 'select k.id, k.label, count(al.id) from saas_apikey k LEFT JOIN saas_actionlog al on k.id = al.apikey_id AND al.actiontype != \'ping\' AND time BETWEEN @startTime AND @endTime group by k.id, k.label;',
                 resultTransformer: (List<dynamic> result) {
                   print('mapping ${result}');
                   return result.map((row) =>
