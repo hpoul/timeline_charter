@@ -1,3 +1,9 @@
+// http://stackoverflow.com/a/646643/109219
+if (typeof String.prototype.startsWith != 'function') {
+  String.prototype.startsWith = function (str){
+    return this.slice(0, str.length) == str;
+  };
+}
 
 d3.json('latestdata.json', function(error, json){
   var dataByKey = json.dataByKey;
