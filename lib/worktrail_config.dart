@@ -29,4 +29,9 @@ var workTrailConfig = [
               keys: const ['worktrail.actionlog.count.grouped.null'],
               labels: const ['No API Key']
             ),
+            const AnalyzerConfig(
+              sql: 'SELECT COUNT(*) FROM saas_company WHERE creationdate BETWEEN @startTime AND @endTime',
+              keys: const ['worktrail.company.creation'],
+              labels: const ['Nr of Companies created']
+            ),
 ];
