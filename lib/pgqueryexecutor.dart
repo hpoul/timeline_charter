@@ -34,7 +34,7 @@ class PgQueryExecutor extends QueryExecutor {
           print('result: ${row}');
           List analyzeResultTmp = new List();
           for (int i = 0 ; i < config.keys.length ; i++) {
-            analyzeResultTmp.add(new AnalyzerResult(key: config.keys[i], value: row[i]));
+            analyzeResultTmp.add(new AnalyzerResult(key: config.keys[i], label: config.labels[i], value: row[i]));
           }
           analyzeResult = analyzeResultTmp;
         }
