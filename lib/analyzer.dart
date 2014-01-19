@@ -31,7 +31,7 @@ class AnalyzerConfig {
 class Analyzer {
   Analyzer();
   
-  void analyzeConfigs(QueryExecutor executor, List<AnalyzerConfig> configs) {
+  Future analyzeConfigs(QueryExecutor executor, List<AnalyzerConfig> configs) {
     Map<String, List<Map<String, num>>> dataByKey = {};
     Map<String, String> keyLabelMapping = {};
     List<Future> futures = [];
@@ -65,6 +65,7 @@ class Analyzer {
         today = next;
       }
     }
+    Completer completer = new Completer();
     Future.wait(futures).then((empty){
       // sort everything by x value.
       dataByKey.forEach((k, v){
@@ -73,7 +74,8 @@ class Analyzer {
       var store = { 'dataByKey': dataByKey, 'keyLabelMapping': keyLabelMapping };
       new File('latestdata.json').openWrite(encoding: Encoding.getByName('UTF-8')).write(JSON.encode(store));
       print(JSON.encode(store));
+      completer.complete();
     });
-    
+    return completer.future;
   }
 }

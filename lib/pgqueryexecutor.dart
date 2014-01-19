@@ -43,4 +43,8 @@ class PgQueryExecutor extends QueryExecutor {
       });
     return completer.future;
   }
+  
+  void close() {
+    conn.close();
+  }
 }

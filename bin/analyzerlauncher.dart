@@ -6,7 +6,11 @@ int main() {
   print("hello.");
   openPgQueryExecutor('postgres://herbert:@localhost:5432/worktrail').then((executor) {
     print('connected.');
-    new Analyzer().analyzeConfigs(executor, workTrailConfig);
+    new Analyzer()
+      .analyzeConfigs(executor, workTrailConfig)
+      .whenComplete(() {
+        executor.close();
+      });
   });
   return 0;
 }
