@@ -25,7 +25,7 @@ var workTrailConfig = [
                 }
             ),
             const AnalyzerConfig(
-              sql: 'SELECT COUNT(*) FROM saas_actionlog WHERE time BETWEEN @startTime AND @endTime AND apikey_id IS NULL',
+              sql: 'SELECT COUNT(*) FROM saas_actionlog WHERE time BETWEEN @startTime AND @endTime AND apikey_id IS NULL AND actiontype != \'ping\'',
               keys: const ['worktrail.actionlog.count.grouped.null'],
               labels: const ['No API Key']
             ),
