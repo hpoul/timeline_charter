@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <title>Analytics</title>
+    <link rel="import" href="packages/sql_charter_server/tapo_graph.html" />
+  </head>
+ 
+  <body>   
+    Action Log Count:<br />
+    
+    <tapo-graph prefix="worktrail.actionlog.count.group"></tapo-graph>
+    <br /><br />
+    Company Creation:<br />
+    <tapo-graph prefix="worktrail.company.creation"></tapo-graph>
+    <script type='application/dart'>export 'package:polymer/init.dart';
+    </script>
+    <script src="packages/browser/dart.js"></script>
+  </body>
+</html>

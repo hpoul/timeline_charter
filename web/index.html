@@ -4,13 +4,22 @@
   <head>
     <title>index</title>
   <link type="text/css" rel="stylesheet" href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8/themes/base/jquery-ui.css">
-    <link rel="stylesheet" href="jslib/rickshaw/rickshaw.min.css">
+    <link rel="stylesheet" href="assets/sql_charter_server/js/rickshaw/rickshaw.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.15/jquery-ui.min.js"></script>
-    <script type="text/javascript" src="jslib/rickshaw/d3.v3.js"></script>
-    <script type="text/javascript" src="jslib/rickshaw/rickshaw.min.js"></script>
+    <script type="text/javascript" src="assets/sql_charter_server/js/rickshaw/d3.v3.js"></script>
+    <script type="text/javascript" src="assets/sql_charter_server/js/rickshaw/rickshaw.min.js"></script>
       
-    <script type="text/javascript" src="test.js"></script>
+    <script type="text/javascript" src="assets/sql_charter_server/js/drawchart.js"></script>
+    <script>
+    d3.json('latestdata.json', function(error, json){
+      var dataByKey = json.dataByKey;
+      drawChart(document.querySelector('#chartwrapper'), json.keyLabelMapping, json.dataByKey, 'worktrail.actionlog.count.group');
+      drawChart(document.querySelector('#chartwrapper2'), json.keyLabelMapping, json.dataByKey, 'worktrail.company.creation');
+      document.querySelector('#lastupdated').innerHTML = 'Last updated ' + json.lastupdatestr;
+      
+    });
+    </script>
     <style>
 .chart_container {
         position: relative;
@@ -46,7 +55,6 @@
 </div> -->
     <!-- 
     <script type="application/dart" src="index.dart"></script>
-    <!-- for this next line to work, your pubspec.yaml file must have a dependency on 'browser' -->
-    <!-- script src="packages/browser/dart.js"></script -->
+    script src="packages/browser/dart.js"></script -->
   </body>
 </html>
