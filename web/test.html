@@ -9,10 +9,10 @@
   <body>   
     Action Log Count:<br />
     
-    <tapo-graph prefix="worktrail.actionlog.count.group"></tapo-graph>
+    <tapo-graph prefix="worktrail.actionlog.count.group" loadjson="latestdata.json"></tapo-graph>
     <br /><br />
     Company Creation:<br />
-    <tapo-graph prefix="worktrail.company.creation"></tapo-graph>
+    <tapo-graph prefix="worktrail.company.creation" loadjson="latestdata.json"></tapo-graph>
     <script type='application/dart'>export 'package:polymer/init.dart';
     </script>
     <script src="packages/browser/dart.js"></script>
