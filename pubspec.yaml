@@ -1,6 +1,7 @@
 name: sql_charter_server
 description: A sample application
 dependencies:
+  intl: any
   logging: any
   postgresql: any
   route: any

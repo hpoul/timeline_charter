@@ -3,6 +3,7 @@ library analyzer;
 import 'dart:async';
 import 'dart:convert';
 import 'dart:io';
+import 'package:intl/intl.dart';
 
 part 'src/cachedqueryexecutor.dart';
 part 'src/simplefilecache.dart';
@@ -136,7 +137,10 @@ class Analyzer {
       dataByKey.forEach((k, v){
         v.sort((a, b) => a['x'] - b['x']);
       });
-      var store = { 'dataByKey': dataByKey, 'keyLabelMapping': _keyLabelMapping };
+      var store = { 'lastupdate': new DateTime.now().millisecondsSinceEpoch ~/ 1000,
+                    'lastupdatestr': new DateFormat('yyyy-MM-dd HH:mm').format(new DateTime.now()),
+                    'dataByKey': dataByKey,
+                    'keyLabelMapping': _keyLabelMapping };
       new File('latestdata.json').openWrite(encoding: Encoding.getByName('UTF-8')).write(JSON.encode(store));
       print(JSON.encode(store));
       completer.complete();
