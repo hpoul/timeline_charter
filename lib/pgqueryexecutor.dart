@@ -21,7 +21,7 @@ class PgQueryExecutor extends QueryExecutor {
   PgQueryExecutor._(this.conn) {
   }
   
-  Future<Iterable<AnalyzerResult>> execute(AnalyzerConfig config, DateTime start, DateTime end) {
+  Future<Iterable<AnalyzerResult>> execute(AnalyzerContext context, AnalyzerConfig config, DateTime start, DateTime end) {
     print("executing ${config.sql} for between ${start} and ${end}");
     Completer<Iterable<AnalyzerResult>> completer = new Completer<Iterable<AnalyzerResult>>();
     conn.query(config.sql, { 'startTime': start, 'endTime': end})
