@@ -11,4 +11,4 @@ dependencies:
 transformers:
 - polymer:
     entry_points: 
-      - web/test.html
+      - web/index.html
