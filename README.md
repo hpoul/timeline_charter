@@ -35,7 +35,8 @@ simply a one-liner SQL statement, let me know!
 There are two parts:
 
 1. Analyzer: Dart application which runs the analysis and simply stores 
-   key/value pairs to a given timestamp.
+   key/value pairs to a given timestamp. **This has to be run from a cronjob
+   or similar**.
 2. Web Component: Dart polymer component (which interally uses 
    https://github.com/shutterstock/rickshaw to display the charts)
 
