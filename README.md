@@ -42,7 +42,7 @@ There are two parts:
 
 # Usage
 
-## Create a new project and add polymer and timeline_charter as dependency
+## Create a new dart project and add polymer and timeline_charter as dependency
 
 ## Create a bin/runanalyzer.dart file to configure and run the analyzer
 
@@ -94,6 +94,25 @@ now we just need to use that config and run our analyzer:
 
 
 ## Create web/index.html to display the result
+
+    <!DOCTYPE html>
+
+    <html>
+      <head>
+	<title>Analytics</title>
+	<link rel="import" href="packages/timeline_charter/tapo_graph.html" />
+      </head>
+     
+      <body>   
+	Action Log Count:<br />
+	
+	<tapo-graph prefix="dummy" loadjson="latestdata.json"></tapo-graph>
+	<br /><br />
+	<script type='application/dart'>export 'package:polymer/init.dart';
+	</script>
+	<script src="packages/browser/dart.js"></script>
+      </body>
+    </html>
 
 ## Build app with pub
 
