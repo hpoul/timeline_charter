@@ -1,6 +1,17 @@
 A simple application/framework based on dart to create time based charts 
 based on simple SQL queries.
 
+# Example
+
+See the example project for a sample usage:
+
+* Web: http://hpoul.github.io/timeline_charter_example/
+* Code: https://github.com/hpoul/timeline_charter_example/
+
+This is how it (should) look:
+
+![Sample Image](https://raw.github.com/hpoul/timeline_charter/master/docs/timeline_charter_screenshot.png)
+
 # Usage
 
 ## Create a new project and add polymer and timeline_charter as dependency
