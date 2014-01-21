@@ -1,4 +1,4 @@
-import 'package:sql_charter_server/analyzer.dart';
+import 'package:timeline_charter/analyzer.dart';
 
 /*
 var ApiKeyMap = {

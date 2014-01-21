@@ -1,6 +1,6 @@
-import 'package:sql_charter_server/analyzer.dart';
-import 'package:sql_charter_server/pgqueryexecutor.dart';
-import 'package:sql_charter_server/worktrail_config.dart';
+import 'package:timeline_charter/analyzer.dart';
+import 'package:timeline_charter/pgqueryexecutor.dart';
+import 'package:timeline_charter/worktrail_config.dart';
 import 'dart:io';
 import 'dart:async';
 

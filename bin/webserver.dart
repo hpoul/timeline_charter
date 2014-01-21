@@ -2,7 +2,7 @@ import 'dart:io';
 import 'package:route/server.dart';
 import 'package:logging/logging.dart';
 
-var _logger = new Logger('sql_charter_server.webserver');
+var _logger = new Logger('timeline_charter.webserver');
 
 dynamic serveData(String filename) {
   var f = new File(filename);

@@ -1,6 +1,6 @@
 library pgqueryexecutor;
 
-import 'package:sql_charter_server/analyzer.dart';
+import 'package:timeline_charter/analyzer.dart';
 import 'package:postgresql/postgresql.dart';
 import 'dart:async';
 
