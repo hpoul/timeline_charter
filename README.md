@@ -1,4 +1,5 @@
-A simple application to create time based charts based on simple SQL queries.
+A simple application/framework based on dart to create time based charts 
+based on simple SQL queries.
 
 # Usage
 
