@@ -18,10 +18,17 @@ This is how it (should) look:
 This is still a very experimental state, and it is quite hard to actually use
 it. In addition it currently only supports one chart format:
 
-* 1 Year, 7 day intervals.
+* 1 Year duration, 7 day intervals.
 
 Seems quite limited, and it actually is. But the config is generic enough
 to improve the implementation and the charts.
+
+# Why?
+
+I wanted a simple way to analyze usage statistics from my database. But 
+configuring zabbix & co is a bit annoying, slow and you get no historical
+data. If you know a better tool for the job, which you can configure by
+simply a one-liner SQL statement, let me know!
 
 # Implementation
 
