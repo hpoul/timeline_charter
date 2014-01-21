@@ -10,6 +10,11 @@ part 'src/simplefilecache.dart';
 
 abstract class QueryExecutor {
   Future<Iterable<AnalyzerResult>> execute(AnalyzerContext context, AnalyzerConfig config, DateTime start, DateTime end);
+  
+  /// should be called when this executor is no longer required.
+  close() {
+    // dummy method..
+  }
 }
 
 class AnalyzerCacheKey {
@@ -142,7 +147,7 @@ class Analyzer {
                     'dataByKey': dataByKey,
                     'keyLabelMapping': _keyLabelMapping };
       new File('latestdata.json').openWrite(encoding: Encoding.getByName('UTF-8')).write(JSON.encode(store));
-      print(JSON.encode(store));
+
       completer.complete();
     });
     return completer.future;
