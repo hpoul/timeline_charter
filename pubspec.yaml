@@ -1,5 +1,5 @@
 name: timeline_charter
-author: Herbert Poul
+author: Herbert Poul <herbert.poul@gmail.com>
 version: 0.0.1
 homepage: https://github.com/hpoul/timeline_charter
 description: Simple way to chart time based values based on SQL Queries.

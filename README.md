@@ -11,7 +11,7 @@ See the example project for a sample usage:
 
 This is how it (should) look:
 
-![Sample Image](https://raw.github.com/hpoul/timeline_charter/master/docs/timeline_charter_screenshot.png)
+![Sample Image](https://raw.github.com/hpoul/timeline_charter/master/doc/timeline_charter_screenshot.png)
 
 # Status
 
