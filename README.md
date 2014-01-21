@@ -1,5 +1,6 @@
 A simple application/framework based on dart to create time based charts 
-based on simple SQL queries.
+based on simple SQL queries. It currently has a very limited featureset, but
+great potential ;)
 
 # Example
 
@@ -11,6 +12,25 @@ See the example project for a sample usage:
 This is how it (should) look:
 
 ![Sample Image](https://raw.github.com/hpoul/timeline_charter/master/docs/timeline_charter_screenshot.png)
+
+# Status
+
+This is still a very experimental state, and it is quite hard to actually use
+it. In addition it currently only supports one chart format:
+
+* 1 Year, 7 day intervals.
+
+Seems quite limited, and it actually is. But the config is generic enough
+to improve the implementation and the charts.
+
+# Implementation
+
+There are two parts:
+
+1. Analyzer: Dart application which runs the analysis and simply stores 
+   key/value pairs to a given timestamp.
+2. Web Component: Dart polymer component (which interally uses 
+   https://github.com/shutterstock/rickshaw to display the charts)
 
 # Usage
 
@@ -83,3 +103,6 @@ now we just need to use that config and run our analyzer:
 
 (If you are hosting on file://, make sure to open it in Firefox, because 
 chrome won't allow http requests to file:// protocol.)
+
+
+
