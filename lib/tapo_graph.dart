@@ -11,12 +11,14 @@ class TapoGraph extends PolymerElement {
   
   @published String prefix;
   @published String loadjson;
+  @observable String lastupdatestr;
   
   void enteredView() {
     super.enteredView();
     
     HttpRequest.getString(loadjson).then((v) {
       var obj = JSON.decode(v);
+      lastupdatestr = obj['lastupdatestr'];
       context.callMethod('loadAndDraw', 
           [ getShadowRoot('tapo-graph').querySelector('.chartwrapper'),
             prefix,
