@@ -133,3 +133,6 @@ chrome won't allow http requests to file:// protocol.)
 
 
 
+
+
+[![Bitdeli Badge](https://d2weczhvl823v0.cloudfront.net/hpoul/timeline_charter/trend.png)](https://bitdeli.com/free "Bitdeli Badge")
