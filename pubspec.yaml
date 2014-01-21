@@ -3,11 +3,11 @@ author: Herbert Poul
 version: 0.0.1
 description: Simple way to chart time based values based on SQL Queries.
 dependencies:
-  intl: any
-  logging: any
-  polymer: any
-  postgresql: any
-  route: any
+  intl: '>=0.9.1 <0.10.0'
+  logging: '>=0.9.1+1 <0.10.0'
+  polymer: '>=0.9.4 <0.10.0'
+  postgresql: '>=0.2.13 <0.3.0'
+  route: '>=0.4.6 <0.5.0'
 transformers:
 - polymer:
     entry_points: []
