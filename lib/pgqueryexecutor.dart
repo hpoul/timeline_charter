@@ -30,7 +30,7 @@ class PgQueryExecutor extends QueryExecutor {
         if (config.keys == null) {
           analyzeResult = config.resultTransformer(result);
         } else {
-          var row = result[0];
+          var row = result.length < 1 ? config.keys.map((v)=>0).toList() : result[0];
           print('result: ${row}');
           List analyzeResultTmp = new List();
           for (int i = 0 ; i < config.keys.length ; i++) {
