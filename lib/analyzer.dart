@@ -55,8 +55,10 @@ class AnalyzerConfig {
   final ResultTransformer resultTransformer;
   /// key used for caching - if this is left empty we simply use the first entry in keys.
   final String _cacheKey;
+  /// how many periods should be recalculated at each run (not cached)
+  final int cacheSkipPeriod;
   
-  AnalyzerConfig({this.sql, this.keys, this.labels, this.resultTransformer, String cacheKey}) 
+  AnalyzerConfig({this.sql, this.keys, this.labels, this.resultTransformer, String cacheKey, this.cacheSkipPeriod: 1}) 
       : _cacheKey = cacheKey {
     if (this.keys == null && this._cacheKey == null) {
       throw new Exception('either keys or cacheKey must not be null!');
@@ -64,6 +66,14 @@ class AnalyzerConfig {
   }
   
   String get cacheKey => _cacheKey == null ? keys[0] : _cacheKey;
+  
+  bool allowCaching(AnalyzerContext context, DateTime now, DateTime start, DateTime end) {
+    if (cacheSkipPeriod == 1) {
+      return !end.isAfter(now);
+    } else {
+      return !end.add(end.difference(end) * cacheSkipPeriod).isAfter(now);
+    }
+  }
 }
 
 class AnalyzerContext {

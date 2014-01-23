@@ -18,7 +18,8 @@ class CachedQueryExecutor extends QueryExecutor {
     var cacheKey = new AnalyzerCacheKey(config.cacheKey, context.analyzeType, start.millisecondsSinceEpoch);
     
     Future<Map<String, num>> cacheLookup;
-    if (end.isAfter(now)) {
+    bool allowCaching = config.allowCaching(context, now, start, end);
+    if (!allowCaching) {
       // we are analyzing a time period of the future, so there can't be a cache yet..
       var tmp = new Completer<Map<String, num>>()..complete(null);
       cacheLookup = tmp.future;
@@ -35,7 +36,7 @@ class CachedQueryExecutor extends QueryExecutor {
       } else {
         // nothing found in cache..
         executor.execute(context, config, start, end).then((resultList) {
-          if (end.isBefore(now)) {
+          if (allowCaching) {
             // only put into cache, if the end is before now.
             Map<String, num> cacheResult = {};
             for(AnalyzerResult result in resultList) {
